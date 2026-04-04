@@ -122,7 +122,6 @@ pindesi/
 | Festival Calendar | Indian festivals with countdown + one-click content gen |
 | Refer & Earn | Referral link, WhatsApp share, reward tracker |
 | Settings | Pinterest connect, schedule, language, billing |
-
 ---
 
 ## Monetisation
