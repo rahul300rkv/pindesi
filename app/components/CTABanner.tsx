@@ -11,9 +11,9 @@ export default function CTABanner() {
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto" }}>
           <h2 style={{ fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 800, letterSpacing: "-1px", color: "white", marginBottom: 12, fontFamily: "var(--font-syne, Syne, sans-serif)" }}>Ready to grow your Pinterest, desi style?</h2>
           <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 17, marginBottom: 32, lineHeight: 1.65 }}>Join 2,400+ Indian creators. Free to start. No credit card. No dollar billing.</p>
-          <button onClick={() => setShow(true)} style={{ background: "white", color: "#FF6B00", padding: "14px 32px", borderRadius: 8, fontSize: 15, fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "var(--font-syne, Syne, sans-serif)", display: "inline-flex", alignItems: "center", gap: 8 }}>
-            Join the waitlist → 🎉
-          </button>
+          <a href="/signup" style={{ background: "white", color: "#FF6B00", padding: "14px 32px", borderRadius: 8, fontSize: 15, fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "var(--font-syne, Syne, sans-serif)", display: "inline-flex", alignItems: "center", gap: 8, textDecoration: "none" }}>
+            Sign up free → 🎉
+          </a>
         </div>
       </section>
       {show && <WaitlistModal onClose={() => setShow(false)} />}
