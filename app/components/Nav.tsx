@@ -10,14 +10,15 @@ export default function Nav() {
         <div style={{ fontFamily: "var(--font-syne, Syne, sans-serif)", fontSize: 22, fontWeight: 800, color: "#1A0A00", letterSpacing: "-0.5px" }}>
           Pin<span style={{ color: "#FF6B00" }}>Desi</span>
         </div>
-        <ul style={{ display: "flex", alignItems: "center", gap: 32, listStyle: "none" }}>
+        <ul style={{ display: "flex", alignItems: "center", gap: 24, listStyle: "none" }}>
           <li><a href="#how" style={{ fontSize: 14, color: "#7A5C4A", textDecoration: "none", fontWeight: 500 }}>How it works</a></li>
           <li><a href="#features" style={{ fontSize: 14, color: "#7A5C4A", textDecoration: "none", fontWeight: 500 }}>Features</a></li>
           <li><a href="#pricing" style={{ fontSize: 14, color: "#7A5C4A", textDecoration: "none", fontWeight: 500 }}>Pricing</a></li>
+          <li><a href="/login" style={{ fontSize: 14, color: "#7A5C4A", textDecoration: "none", fontWeight: 500 }}>Sign in</a></li>
           <li>
-            <button onClick={() => setShowWaitlist(true)} style={{ background: "#FF6B00", color: "white", padding: "9px 20px", borderRadius: 6, fontSize: 14, fontWeight: 600, border: "none", cursor: "pointer", fontFamily: "inherit" }}>
-              Join waitlist →
-            </button>
+            <a href="/signup" style={{ background: "#FF6B00", color: "white", padding: "9px 20px", borderRadius: 6, fontSize: 14, fontWeight: 600, border: "none", cursor: "pointer", fontFamily: "inherit", textDecoration: "none" }}>
+              Sign up free →
+            </a>
           </li>
         </ul>
       </nav>
