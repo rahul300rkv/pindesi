@@ -92,3 +92,45 @@ create index pins_user_status on public.pins(user_id, status);
 create index pins_scheduled on public.pins(scheduled_at) where status = 'scheduled';
 create index referrals_referrer on public.referral_rewards(referrer_id);
 create index profiles_referral_code on public.profiles(referral_code);
+
+
+-- ─── pg_cron scheduler (run AFTER deploying the Edge Function) ───────────────
+-- Replace YOUR_PROJECT_REF with your Supabase project ref (found in project URL)
+-- Run this in SQL Editor once after: supabase functions deploy post-scheduled
+
+/*
+  -- Enable pg_net extension (needed to call HTTP from SQL)
+  create extension if not exists pg_net;
+
+  -- Enable pg_cron extension
+  create extension if not exists pg_cron;
+
+  -- Schedule the post-scheduled edge function every 15 minutes
+  select cron.schedule(
+    'post-scheduled-pins',
+    '*/15 * * * *',
+    $$
+      select net.http_post(
+        url := 'https://YOUR_PROJECT_REF.supabase.co/functions/v1/post-scheduled',
+        headers := jsonb_build_object(
+          'Content-Type', 'application/json',
+          'Authorization', 'Bearer YOUR_SERVICE_ROLE_KEY'
+        ),
+        body := '{}'::jsonb
+      );
+    $$
+  );
+
+  -- Reset monthly pin counters on 1st of every month at midnight IST (18:30 UTC)
+  select cron.schedule(
+    'reset-monthly-pins',
+    '30 18 1 * *',
+    'update public.profiles set pins_used_this_month = 0'
+  );
+
+  -- To check scheduled jobs:
+  select * from cron.job;
+
+  -- To remove a job:
+  select cron.unschedule('post-scheduled-pins');
+*/

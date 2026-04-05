@@ -2,11 +2,8 @@
   "framework": "nextjs",
   "crons": [
     {
-      "path": "/api/cron/post-scheduled",
-      "schedule": "*/15 * * * *"
-    },
-    {
       "path": "/api/cron/reset-pins",
       "schedule": "0 0 1 * *"
     }
-  ]}
+  ]
+}
