@@ -32,7 +32,7 @@ export default function Hero() {
           </p>
 
           <div className="fade-up-3" style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-            <a href="#pricing" style={{ background: "var(--saffron)", color: "white", padding: "14px 28px", borderRadius: 8, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: "var(--font-syne)", letterSpacing: "-0.2px", display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <a href="/signup" style={{ background: "var(--saffron)", color: "white", padding: "14px 28px", borderRadius: 8, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: "var(--font-syne)", letterSpacing: "-0.2px", display: "inline-flex", alignItems: "center", gap: 8 }}>
               Start for free →
             </a>
             <a href="#how" style={{ color: "var(--ink)", padding: "14px 24px", borderRadius: 8, fontSize: 15, fontWeight: 500, textDecoration: "none", border: "1.5px solid rgba(45,18,0,0.15)", display: "inline-flex", alignItems: "center", gap: 8 }}>
